@@ -403,11 +403,12 @@ Runner.prototype = {
       this.playingIntro = true;
       this.tRex.playingIntro = true;
 
-      // CSS animation definition.
-      var keyframes = '@-webkit-keyframes intro { ' +
-            'from { width:' + Trex.config.WIDTH + 'px }' +
-            'to { width: ' + this.dimensions.WIDTH + 'px }' +
-          '}';
+      var keyframes = '@-moz-keyframes intro { ';
+      if (!!window.chrome || !!window.opera)
+        keyframes = '@-webkit-keyframes intro { ';
+
+      keyframes += 'from { width:' + Trex.config.WIDTH + 'px }' +
+        'to { width: ' + this.dimensions.WIDTH + 'px }' + '}';
       document.styleSheets[0].insertRule(keyframes, 0);
 
       this.containerEl.addEventListener(Runner.events.ANIM_END,
@@ -847,7 +848,7 @@ function createCanvas(container, width, height, opt_classname) {
  */
 function decodeBase64ToArrayBuffer(base64String) {
   var len = (base64String.length / 4) * 3;
-  var str = atob(base64String);
+  var str = btoa(base64String);
   var arrayBuffer = new ArrayBuffer(len);
   var bytes = new Uint8Array(arrayBuffer);
 
