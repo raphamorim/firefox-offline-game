@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>Firefox Runner</title>
+		<link rel="stylesheet" href="stylesheet/main.css">
+	</head>
+	<body>
+		<div id="firefox-Runner">
+			<div hidden>
+				<div id="offline-resources-1x">
+					<img id="1x-obstacle-large" src="img/default_100_percent/offline/100-obstacle-large-sprite.png">
+					<img id="1x-obstacle-small" src="img/default_100_percent/offline/100-obstacle-small-sprite.png">
+					<img id="1x-cloud" src="img/default_100_percent/offline/100-cloud.png">
+					<img id="1x-text" src="img/default_100_percent/offline/100-text-sprite.png">
+					<img id="1x-horizon" src="img/default_100_percent/offline/100-horizon.png">
+					<img id="1x-trex" src="img/default_100_percent/offline/100-offline-trex.png">
+					<img id="1x-restart" src="img/default_100_percent/offline/100-restart.png">
+				</div>
+				<div id="offline-resources-2x">
+					<img id="2x-obstacle-large" src="img/default_200_percent/offline/200-obstacle-large-sprite.png">
+					<img id="2x-obstacle-small" src="img/default_200_percent/offline/200-obstacle-small-sprite.png">
+					<img id="2x-cloud" src="img/default_200_percent/offline/200-cloud.png">
+					<img id="2x-text" src="img/default_200_percent/offline/200-text-sprite.png">
+					<img id="2x-horizon" src="img/default_200_percent/offline/200-horizon.png">
+					<img id="2x-trex" src="img/default_200_percent/offline/200-offline-trex.png">
+					<img id="2x-restart" src="img/default_200_percent/offline/200-restart.png">
+				</div>
+				<template id="audio-resources">
+					<audio id="offline-sound-press" src="sounds/button-press.mp3"></audio>
+					<audio id="offline-sound-hit" src="sounds/hit.mp3"></audio>
+					<audio id="offline-sound-reached" src="sounds/score-reached.mp3"></audio>
+				</template>
+			</div>
+			<div id="main-message">
+				<h1 i18n-content="heading">Unable to connect to the Internet</h1>
+				<p>Mozilla Firefox can’t display the webpage because your computer isn’t connected to the Internet.</p>
+				<div class="error-code" jscontent="errorCode" jstcache="9">ERR_INTERNET_DISCONNECTED</div>
+			</div>
+		</div>
+		<script src="js/runner.js"></script>
+		<script>
+			new Runner('#firefox-Runner');
+		</script>
+	</body>
+</html>

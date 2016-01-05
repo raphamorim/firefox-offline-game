@@ -1,0 +1,85 @@
+body {
+  font-family: 'Helvetica Neue', 'Lucida Grande', sans-serif;
+  font-size: 95%;
+  background-color: #f7f7f7;
+  color: #646464;
+}
+h1 {
+  color: #333;
+  font-size: 1.6em;
+  font-weight: normal;
+  line-height: 1.25em;
+  margin-bottom: 16px;
+}
+#firefox-Runner { 
+  color: #2b2b2b;
+  font-size: 1em;
+  line-height: 1.55;
+  margin: 0 auto;
+  max-width: 600px;
+  padding-top: 100px;
+  width: 100%;
+  padding: 5%;
+} 
+#offline-resources{
+  display: none;
+}
+#main-message {
+  margin-top: 8em;
+}
+.runner-container {
+  max-width: 600px;
+  overflow: hidden;
+  position: absolute;
+  top: 35px;
+  height: 150px;
+  width: 44px;
+}
+.controller {
+  background: rgba(247,247,247, .1);
+  height: 100vh;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  z-index: 1;
+}
+.error-code {
+  margin: 10px 0;
+  color: #777;
+  display: block;
+  font-size: .86667em;
+  margin-top: 15px;
+  opacity: .5;
+  text-transform: uppercase;
+}
+
+@media (max-width: 640px), (max-height: 640px) {
+  h1 {
+    margin: 0 0 15px;
+  }
+  #main-message {
+    margin-top: 10em;
+  }
+}
+
+@media (max-height: 736px) and (max-width: 420px) and (orientation: portrait), (max-height: 420px) and (max-width: 736px) and (orientation: landscape) {
+  h1 {
+    font-size: 1.5em;
+    margin-bottom: 8px;
+  }
+  #main-message > p {
+    display: inline;
+  }
+  #main-message {
+    margin-top: 12em;
+  }
+}
+
+@media (max-height: 736px) and (max-width: 420px) and (orientation: portrait), (max-height: 420px) and (max-width: 736px) and (orientation: landscape) {
+  #main-message > p {
+    font-size: .95em;
+    line-height: 1.61em;
+    margin-top: 8px;
+  }
+}
