@@ -4,7 +4,7 @@
 
 ## The Goal
 
-[x] Make a game based on Chromium T-Rex Game witch is supported in Firefox Browser :)
+[x] Make a Chromium T-Rex game witch is supported in Firefox Browser :)
 
 ## Credits:
 
