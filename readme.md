@@ -1,6 +1,6 @@
 # Firefox Offline Game
 
-> A firefox fork from Chromium T-Rex Game
+> Mozillian fork from Chromium T-Rex Game
 
 ## The Goal
 
