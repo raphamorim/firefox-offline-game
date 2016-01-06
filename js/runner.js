@@ -1,6 +1,3 @@
-// Copyright (c) 2014 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
 (function() {
 'use strict';
 /**
@@ -1456,7 +1453,7 @@ Trex.prototype = {
     }
 
     if (this.status == Trex.status.WAITING) {
-      this.blink(getTimeStamp());
+      // this.blink(getTimeStamp());
     } else {
       this.draw(this.currentAnimFrames[this.currentFrame], 0);
     }
