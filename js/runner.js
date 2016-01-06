@@ -170,9 +170,9 @@ Runner.imageSources = {
  * @enum {string}
  */
 Runner.sounds = {
-  BUTTON_PRESS: 'offline-sound-press',
-  HIT: 'offline-sound-hit',
-  SCORE: 'offline-sound-reached'
+  // BUTTON_PRESS: 'offline-sound-press',
+  // HIT: 'offline-sound-hit',
+  // SCORE: 'offline-sound-reached'
 };
 
 
@@ -192,7 +192,7 @@ Runner.keycodes = {
  * @enum {string}
  */
 Runner.events = {
-  ANIM_END: 'webkitAnimationEnd',
+  ANIM_END: ((!!window.chrome || !!window.opera)? 'webkitAnimationEnd' : 'animationend'),
   CLICK: 'click',
   KEYDOWN: 'keydown',
   KEYUP: 'keyup',
@@ -403,7 +403,7 @@ Runner.prototype = {
       this.playingIntro = true;
       this.tRex.playingIntro = true;
 
-      var keyframes = '@-moz-keyframes intro { ';
+      var keyframes = '@keyframes intro { ';
       if (!!window.chrome || !!window.opera)
         keyframes = '@-webkit-keyframes intro { ';
 
@@ -415,11 +415,13 @@ Runner.prototype = {
           this.startGame.bind(this));
 
       this.containerEl.style.webkitAnimation = 'intro .4s ease-out 1 both';
+      this.containerEl.style.animation = 'intro .4s ease-out 1 both';
       this.containerEl.style.width = this.dimensions.WIDTH + 'px';
 
       if (this.touchController) {
         this.outerContainerEl.appendChild(this.touchController);
       }
+
       this.activated = true;
       this.started = true;
     } else if (this.crashed) {
@@ -436,6 +438,7 @@ Runner.prototype = {
     this.playingIntro = false;
     this.tRex.playingIntro = false;
     this.containerEl.style.webkitAnimation = '';
+    this.containerEl.style.animation = '';
     this.playCount++;
 
     // Handle tabbing off the page. Pause the current game.
