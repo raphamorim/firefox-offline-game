@@ -2,6 +2,8 @@
 
 > Mozillian fork from Chromium T-Rex Game
 
+![Preview](https://raw.githubusercontent.com/raphamorim/firefox-offline-game/gh-pages/images/card.jpg)
+
 ## The Goal
 
 [x] Make a Chromium T-Rex game witch is supported in Firefox Browser :)
